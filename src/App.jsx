@@ -4,10 +4,22 @@ import CourseForm from "./components/CourseForm";
 import CourseList from "./components/CourseList";
 import Progress from "./components/Progress";
 
+import { loadFromGist, saveToGist } from "./utils/gistSync";
+
 function App() {
 
   const [courses, setCourses] = useState([]);
   const [hasLoaded, setHasLoaded] = useState(false);
+
+  async function syncFromGist() {
+    const data = await loadFromGist();
+    setCourses(data);
+  }
+
+  async function syncToGist() {
+    await saveToGist(courses);
+    alert("Synced to GitHub Gist ✅");
+  }
 
   useEffect(() => {
     const savedCourses = loadCourses();
@@ -44,6 +56,14 @@ function App() {
       courses={courses}
       onStatusChange={handleStatusChange}
     />
+
+    <button onClick={syncFromGist}>
+      Load from GitHub
+    </button>
+
+    <button onClick={syncToGist}>
+      Save to GitHub
+    </button>
   </div>;
 }
 
