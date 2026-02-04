@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { loadCourses, saveCourses } from "./utils/storage";
 import CourseForm from "./components/CourseForm";
 import CourseList from "./components/CourseList";
+import Progress from "./components/Progress";
 
 function App() {
 
@@ -29,6 +30,8 @@ function App() {
 
   return <div>
     <h1>Degree Tracker</h1>
+
+    <Progress courses={courses} />
 
     <CourseForm onAddCourse={handleAddCourse} />
 
