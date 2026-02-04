@@ -7,14 +7,19 @@ import Progress from "./components/Progress";
 function App() {
 
   const [courses, setCourses] = useState([]);
+  const [hasLoaded, setHasLoaded] = useState(false);
 
   useEffect(() => {
-    setCourses(courses);
+    const savedCourses = loadCourses();
+    setCourses(savedCourses);
+    setHasLoaded(true);
   }, []);
 
   useEffect(() => {
-    saveCourses(courses);
-  }, [courses]);
+    if (hasLoaded) {
+      saveCourses(courses);
+    }
+  }, [courses, hasLoaded]);
 
   function handleAddCourse(course) {
     setCourses(prev => [...prev, course]);
