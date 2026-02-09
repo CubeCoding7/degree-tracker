@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0F172A;
+}
+
+.yearSection {
+    padding: 20px;
+    margin: 20px;
+    background-color: #020617;
+    border: #1e293b 0.1em solid;
+    border-radius: 20px;
+}
+
+.yearSection h2 {
+    border-bottom: 1px solid #1e293b;
+    padding-bottom: 8px;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 10fr);
+    gap: 10px;
+}
+
+.classSection {
+    border-radius: 20px;
+    padding: 10px;
+    border: #1e293b 0.1em solid;
+    background-color: #0F172A;
+}
+
+.course-item.completed {
+    color: #2e7d32;
+    /* green */
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.course-item.in-progress {
+    color: #f57c00;
+    /* orange */
+}
+
+.course-item.not-taken {
+    color: #333;
+}

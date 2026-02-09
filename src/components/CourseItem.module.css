@@ -1,0 +1,58 @@
+.courseItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Status styles */
+.not-taken {
+    color: #ff5d5d;
+}
+
+.in-progress {
+    color: #f57c00;
+}
+
+.completed {
+    color: #2e7d32;
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.menuWrapper {
+    position: relative;
+    margin-left: auto;
+}
+
+.menuButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.menuItem {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    color: darkblue;
+}
+
+.menuItem:hover {
+    background-color: #f5f5f5;
+}

@@ -37,6 +37,16 @@ function App() {
     setCourses(prev => [...prev, course]);
   }
 
+  function handleRemoveCourse(id) {
+    console.log(id);
+    console.log("tser")
+    setCourses(prev =>
+      prev.filter(course =>
+        course.id !== id
+      )
+    );
+  }
+
   function handleStatusChange(id, newStatus) {
     setCourses(prev =>
       prev.map(course =>
@@ -55,6 +65,7 @@ function App() {
     <CourseList
       courses={courses}
       onStatusChange={handleStatusChange}
+      handleDelete={handleRemoveCourse}
     />
 
     <button onClick={syncFromGist}>
